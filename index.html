@@ -428,5 +428,20 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+<script>
+  function updateHeroTitles(){
+    const isMobile = window.innerWidth <= 768;
+    document.querySelectorAll('.hero-title').forEach(el=>{
+      const full = el.querySelector('.full');
+      const short = el.querySelector('.short');
+      if(full && short){
+        full.style.display = isMobile ? 'none' : '';
+        short.style.display = isMobile ? '' : 'none';
+      }
+    });
+  }
+  window.addEventListener('load', updateHeroTitles);
+  window.addEventListener('resize', updateHeroTitles);
+</script>
 </body>
 </html>
