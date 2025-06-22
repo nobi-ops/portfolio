@@ -1,0 +1,484 @@
+/* ===== Base & Variables ===== */
+:root {
+    --primary-font: 'Bebas Neue', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+    --bg-color: #f8f8f8;
+    --bg-secondary-color: #ffffff;
+    --accent-color: #c5a47e;
+    --accent-hover-color: #b38f65;
+    --text-dark-color: #2c2c2c;
+    --text-medium-color: #555555;
+    --border-color: #e0e0e0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body { 
+    font-family: var(--secondary-font); 
+    background-color: var(--bg-color);
+    color: var(--text-dark-color);
+    line-height: 1.8;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== General Styling & Animations ===== */
+.section-title {
+    font-family: var(--primary-font);
+    font-size: 4rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 5rem;
+    color: var(--text-dark-color);
+    letter-spacing: 4px;
+    position: relative;
+}
+
+.section-title span {
+    background: var(--bg-color);
+    padding: 0 30px;
+    position: relative;
+    z-index: 1;
+}
+
+#photobooks .section-title span, #about .section-title span {
+    background: var(--bg-secondary-color);
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 500px;
+    height: 1px;
+    background: var(--border-color);
+    z-index: 0;
+}
+
+.section-description {
+    font-size: 1rem;
+    color: var(--text-medium-color);
+    max-width: 700px;
+    /* Margin is now controlled by inline style in HTML */
+    line-height: 1.8;
+    text-align: center;
+}
+
+section { 
+    padding: 8rem 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+section.is-visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* ===== Navigation Bar ===== */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: rgba(248, 248, 248, 0.8);
+    backdrop-filter: blur(12px);
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s;
+    border-bottom: 1px solid transparent;
+}
+.navbar.scrolled {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar.scroll-down { transform: translateY(-100%); }
+.navbar.scroll-up { transform: translateY(0); }
+
+.logo {
+    font-family: var(--primary-font);
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+.logo:hover { transform: scale(1.05); }
+
+.nav-links { display: flex; gap: 3rem; list-style: none; }
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-medium-color);
+    font-family: var(--primary-font);
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color);
+    transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.nav-links a:hover { color: var(--accent-color); }
+.nav-links a:hover::after { width: 100%; }
+.burger-menu { display: none; cursor: pointer; font-size: 1.8rem; color: var(--text-dark-color); }
+
+/* ===== Hero Section ===== */
+.hero {
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1542038784-56e98e742998?q=80&w=2940&auto=format&fit=crop') no-repeat center center/cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    display: flex; /* Use flex to center hero-split-content vertically */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(248, 248, 248, 1) 10%, rgba(255, 255, 255, 0.3) 60%, rgba(248, 248, 248, 0.1) 100%);
+    z-index: 0;
+}
+
+.hero-split-content {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 1;
+    gap: 20px;
+    padding: 20px;
+}
+
+.hero-promo-newsletter,
+.hero-promo-photobook {
+    position: relative; /* Crucial for positioning the content overlay */
+    flex: 1;
+    max-width: 50%;
+    border-radius: 10px;
+    overflow: hidden; /* Keep the rounded corners on the image */
+    background-color: #000; /* Fallback color */
+}
+
+.hero-promo-photobook img,
+.hero-promo-newsletter img {
+    display: block;
+    width: 100%;
+    height: auto; /* This maintains the image's aspect ratio */
+    border-radius: 10px;
+}
+
+.hero .hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 100%; /* Ensure it covers the full area */
+}
+
+.hero-title {
+    font-family: var(--primary-font);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: #fff;
+    text-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+    margin-bottom: 0.8rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+    color: #e0e0e0;
+    margin-top: 0.5rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.5px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.hero .cta-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.hero .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+.hero-promo-photobook .cta-button {
+    background-color: #1e88e5;
+}
+.hero-promo-newsletter .cta-button {
+    background-color: #ff4081;
+}
+
+.hero .photobook-link-hero a,
+.hero .newsletter-link-hero a {
+    color: #fff;
+    text-decoration: underline;
+    opacity: 0.85;
+    font-size: 0.85em;
+}
+.hero .photobook-link-hero a:hover,
+.hero .newsletter-link-hero a:hover {
+    opacity: 1;
+}
+
+.scroll-down-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    animation: bounce 2.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-25px) translateX(-50%); }
+    60% { transform: translateY(-12px) translateX(-50%); }
+}
+/* ===== End Hero Section ===== */
+
+/* ===== Newsletter Section ===== */
+#newsletter { background-color: var(--bg-color); }
+.newsletter-content p {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    color: var(--text-medium-color);
+    font-size: 1.1rem;
+}
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    font-family: var(--primary-font);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.cta-button:hover { 
+    background-color: var(--accent-hover-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.cta-button .fas { margin-left: 15px; }
+
+/* ===== Photobooks Section ===== */
+#photobooks {
+    background-color: var(--bg-secondary-color);
+    opacity: 1;
+    transform: translateY(0);
+}
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.book-item {
+    text-decoration: none;
+    color: var(--text-dark-color);
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-secondary-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.book-item:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.book-item .book-image-wrapper {
+    overflow: hidden;
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background-color: #e0e0e0;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.book-item:hover img {
+    transform: scale(1.05);
+}
+
+.book-info { padding: 1.5rem; }
+.book-info h3 { font-family: var(--primary-font); font-size: 1.8rem; letter-spacing: 1.5px; margin-bottom: 0.5rem; }
+.book-info p { color: var(--accent-color); font-size: 1rem; font-weight: bold; }
+
+.book-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.book-button {
+    display: inline-block;
+    flex-grow: 1;
+    max-width: 150px;
+    text-align: center;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    font-family: var(--primary-font);
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.book-button:hover {
+    background-color: var(--accent-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.book-button.paperback {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.book-button.paperback:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+/* ===== Portfolio Section ===== */
+#portfolio { background-color: var(--bg-color); }
+.portfolio-swiper-container { max-width: 1200px; margin: auto; padding: 0 1rem; }
+.swiper-slide {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.swiper-slide img { width: 100%; }
+.swiper-button-next, .swiper-button-prev { color: var(--accent-color); transition: transform 0.3s ease; }
+.swiper-button-next:hover { transform: scale(1.2); }
+.swiper-button-prev:hover { transform: scale(1.2); }
+.swiper-pagination-portfolio .swiper-pagination-bullet-active { background: var(--accent-color); }
+
+/* ===== About Section ===== */
+#about { background-color: var(--bg-secondary-color); }
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+.about-image img { 
+    width: 250px; 
+    height: 250px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 8px solid #fff;
+    box-shadow: 0 0 0 2px var(--accent-color), 0 10px 40px rgba(0,0,0,0.1);
+}
+.about-text { flex: 1; }
+.about-text h3 { font-family: var(--primary-font); font-size: 2.5rem; margin-bottom: 1rem; }
+.about-text p { color: var(--text-medium-color); font-size: 1.1rem; }
+
+/* ===== Footer ===== */
+footer {
+    background-color: var(--bg-color);
+    color: var(--text-medium-color);
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--border-color);
+}
+.footer-content { max-width: 800px; margin: 0 auto; }
+.social-links { margin: 1.5rem 0; }
+.social-links a {
+    color: var(--text-medium-color);
+    font-size: 2rem;
+    margin: 0 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-links a:hover { 
+    color: var(--accent-color); 
+    transform: translateY(-5px);
+}
+.copyright { font-size: 0.9rem; margin-top: 2rem; }
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .section-title { font-size: 2.8rem; }
+    section { padding: 5rem 1.5rem; }
+    .navbar { padding: 1rem 1.5rem; }
+    .nav-links { 
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(248, 248, 248, 0.98);
+        flex-direction: column;
+        padding: 1rem 0;
+        border-top: 1px solid var(--border-color);
+    }
+    .nav-links.active { display: flex; }
+    .nav-links li { text-align: center; padding: 1rem 0; }
+    .burger-menu { display: block; }
+
+    .hero-title { font-size: 14vw; }
+    .books-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-content { flex-direction: column; text-align: center; }
+}
