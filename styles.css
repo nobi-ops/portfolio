@@ -279,6 +279,29 @@ section.is-visible {
 }
 /* ===== End Hero Section ===== */
 
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .hero-split-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .hero-promo-photobook,
+  .hero-promo-newsletter {
+    max-width: 100%;
+  }
+  .hero-title {
+    font-size: 1.4rem; /* Smaller headings on mobile */
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .hero .cta-button {
+    font-size: 0.9rem;
+    padding: 10px 22px;
+  }
+}
+/* ===== End Responsive Adjustments ===== */
+
 /* ===== Newsletter Section ===== */
 #newsletter { background-color: var(--bg-color); }
 .newsletter-content p {
