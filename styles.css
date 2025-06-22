@@ -142,13 +142,14 @@ section.is-visible {
 /* Add top space so hero content is not hidden behind fixed navbar */
 .hero { padding-top: 140px; }
 @media (min-width: 769px) {
-  .hero { padding-top: 100px; }
+  .hero { padding-top: 120px; }
 }
 
 /* hide short title by default */
 
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 120px; /* space for navbar */
     text-align: center;
     position: relative;
     background: url('https://images.unsplash.com/photo-1542038784-56e98e742998?q=80&w=2940&auto=format&fit=crop') no-repeat center center/cover;
