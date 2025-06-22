@@ -140,7 +140,7 @@ section.is-visible {
 /* ===== Hero Section ===== */
 
 /* hide short title by default */
-.hero-title .short { display:none; }
+
 .hero {
     height: 100vh;
     text-align: center;
@@ -504,9 +504,8 @@ footer {
     .nav-links li { text-align: center; padding: 1rem 0; }
     .burger-menu { display: block; }
 
-    .hero-title .full { display:none; }
-    .hero-title .short { display:block; }
-    .hero-title { font-size: 14vw; }
+
+    
     .books-grid { grid-template-columns: 1fr; gap: 2rem; }
     .about-content { flex-direction: column; text-align: center; }
 }
