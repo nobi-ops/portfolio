@@ -1,0 +1,85 @@
+name: Add Photobook (MMJ)
+description: Add a new Muscle Model Japan photobook card (image + links)
+title: "Photobook: MMJ <number>"
+labels: [enhancement, photobook]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Provide the required info to add a new photobook card to both JA/EN pages. You can either paste public URLs for the image or specify a local file path already under `images/`.
+
+  - type: input
+    id: image
+    attributes:
+      label: Cover Image Path or URL
+      description: e.g. /Users/nobuhiro/portfolio/images/mmjNN.jpeg or a URL we can download from
+      placeholder: images/mmj38.jpeg
+    validations:
+      required: true
+
+  - type: input
+    id: id
+    attributes:
+      label: Photobook ID (number)
+      description: Optional. If omitted, we will infer from the image name (mmjNN) or use max+1
+      placeholder: "38"
+    validations:
+      required: false
+
+  - type: input
+    id: title
+    attributes:
+      label: Title (optional)
+      description: Defaults to "Muscle Model Japan <ID>"
+      placeholder: Muscle Model Japan 38
+    validations:
+      required: false
+
+  - type: input
+    id: ja_kindle
+    attributes:
+      label: JA - 電子版 URL
+      placeholder: https://amzn.to/xxxxxx
+    validations:
+      required: true
+
+  - type: input
+    id: ja_paper
+    attributes:
+      label: JA - 紙媒体 URL
+      placeholder: https://amzn.to/yyyyyy
+    validations:
+      required: true
+
+  - type: input
+    id: en_kindle
+    attributes:
+      label: EN - kindle URL
+      placeholder: https://a.co/zzzzzz
+    validations:
+      required: true
+
+  - type: input
+    id: en_paper
+    attributes:
+      label: EN - paper URL
+      placeholder: https://a.co/wwwwww
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Any additional context
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I confirm the links are correct and intended for public display.
+          required: true
+
