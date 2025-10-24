@@ -14,32 +14,21 @@
 </head>
 <body>
     <!-- Age Verification Notice -->
-    <div id="age-notice" class="age-notice" style="
-        background-color: #f8d7da;
+    <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #f8d7da;
         color: #721c24;
-        padding: 6px 10px;
+        padding: 5px;
         text-align: center;
-        font-size: 12px;
-        line-height: 1.3;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        margin: 0 auto 20px;
-        max-width: 100%;
-        transition: opacity 0.3s ease;
+        font-size: 11px;
+        z-index: 1000;
+        border-bottom: 1px solid #f5c6cb;
     ">
         This site contains sensitive/adult content. By proceeding you confirm you are 18 years of age or older.
     </div>
-    <script>
-        // Hide message on scroll
-        window.addEventListener('scroll', function() {
-            const notice = document.getElementById('age-notice');
-            if (notice && window.scrollY > 100) { // Hide after 100px scroll
-                notice.style.opacity = '0';
-                setTimeout(() => {
-                    notice.style.display = 'none';
-                }, 300); // Match fade out duration
-            }
-        });
-    </script>
     <nav class="navbar">
         <div class="logo">MUSCLE PHOTO</div>
         <div class="burger-menu"><i class="fas fa-bars"></i></div>
