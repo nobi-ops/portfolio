@@ -37,6 +37,8 @@
       }));
     </script>
 
+    <!-- Hide page content while overlay is visible to avoid iOS bleed-through -->
+    <div id="page-content" aria-hidden="true" style="display:none;">
     <nav class="navbar">
         <div class="logo">MUSCLE PHOTO</div>
         <div class="burger-menu"><i class="fas fa-bars"></i></div>
@@ -73,6 +75,8 @@
         </div>
 
     </section>
+
+    </div><!-- /#page-content -->
 
     <section id="photobooks" class="photobooks">
         <h2 class="section-title" style="margin-bottom: 1rem !important;"><span>PHOTOBOOKS ON AMAZON</span></h2>
