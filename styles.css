@@ -119,6 +119,15 @@ section.is-visible {
     transition: color 0.3s ease;
     display: flex;
     align-items: center;
+    gap: 10px;
+}
+
+.age-notice {
+    font-size: 10px;
+    opacity: 0.8;
+    white-space: nowrap;
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.5px;
 }
 .logo:hover { transform: scale(1.05); }
 
