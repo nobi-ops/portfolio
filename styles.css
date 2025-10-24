@@ -125,23 +125,6 @@ section.is-visible {
     gap: 10px;
 }
 
-.navbar {
-    position: relative;
-}
-
-.age-notice {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    text-align: center;
-    font-size: 10px;
-    padding: 3px 0;
-    z-index: 1000;
-    border-bottom: 1px solid #eee;
-    font-family: Arial, sans-serif;
-}
 .logo:hover { transform: scale(1.05); }
 
 .nav-links { display: flex; gap: 3rem; list-style: none; }
