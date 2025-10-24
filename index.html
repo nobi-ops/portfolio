@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- Language Selection Overlay -->
-    <div id="lang-overlay" style="position:fixed;inset:0;height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#f8f8f8;z-index:9999;text-align:center;font-family:'Roboto',sans-serif;overscroll-behavior:contain;">
+    <div id="lang-overlay" style="position:fixed;inset:0;height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#f8f8f8;z-index:9999;text-align:center;font-family:'Roboto',sans-serif;overscroll-behavior:contain;touch-action:none;">
         <h1 style="font-family:'Bebas Neue',sans-serif;font-size:3rem;margin-bottom:2rem;letter-spacing:2px;color:#2c2c2c;">Select Language</h1>
         <div style="display:flex;gap:2rem;">
             <a href="index_ja.html" style="display:inline-block;padding:1rem 2.5rem;font-size:1.2rem;text-decoration:none;border-radius:8px;background:#c5a47e;color:#fff;transition:background .3s;">日本語</a>
@@ -35,6 +35,9 @@
         document.body.style.position = '';
         document.body.style.width = '';
       }));
+      // Block iOS scroll chaining on the overlay
+      const ov = document.getElementById('lang-overlay');
+      ov.addEventListener('touchmove', (e)=>{ e.preventDefault(); }, { passive: false });
     </script>
 
     <!-- Hide page content while overlay is visible to avoid iOS bleed-through -->
