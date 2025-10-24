@@ -34,11 +34,24 @@ body {
     right: 0;
     background-color: #f8d7da;
     color: #721c24;
-    padding: 10px 0;
+    padding: 10px 15px;
     text-align: center;
     font-size: 14px;
+    line-height: 1.4;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* スマホ表示用の調整 */
+@media (max-width: 768px) {
+    .age-notice {
+        padding: 8px 10px;
+        font-size: 13px;
+        line-height: 1.5;
+    }
 }
 
 /* ===== General Styling & Animations ===== */
