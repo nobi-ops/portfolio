@@ -23,6 +23,22 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding-top: 40px; /* ナビゲーションバーの下にスペースを追加 */
+}
+
+/* 年齢確認メッセージのスタイル */
+.age-notice {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* ===== General Styling & Animations ===== */
