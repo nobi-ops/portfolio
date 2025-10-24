@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- Language Selection Overlay -->
-    <div id="lang-overlay" style="position:fixed;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#f8f8f8;z-index:9999;text-align:center;font-family:'Roboto',sans-serif;">
+    <div id="lang-overlay" style="position:fixed;inset:0;height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#f8f8f8;z-index:9999;text-align:center;font-family:'Roboto',sans-serif;overscroll-behavior:contain;">
         <h1 style="font-family:'Bebas Neue',sans-serif;font-size:3rem;margin-bottom:2rem;letter-spacing:2px;color:#2c2c2c;">Select Language</h1>
         <div style="display:flex;gap:2rem;">
             <a href="index_ja.html" style="display:inline-block;padding:1rem 2.5rem;font-size:1.2rem;text-decoration:none;border-radius:8px;background:#c5a47e;color:#fff;transition:background .3s;">日本語</a>
@@ -22,10 +22,19 @@
         </div>
     </div>
     <script>
-      // Hide the rest of the page until language chosen
-      document.documentElement.style.overflow='hidden';
-      const links=document.querySelectorAll('#lang-overlay a');
-      links.forEach(l=>l.addEventListener('click',()=>{document.documentElement.style.overflow='auto';}));
+      // Prevent background from scrolling while language overlay is visible (mobile-safe)
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+
+      const links = document.querySelectorAll('#lang-overlay a');
+      links.forEach(l => l.addEventListener('click', () => {
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+      }));
     </script>
 
     <nav class="navbar">
