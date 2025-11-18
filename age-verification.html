@@ -105,8 +105,8 @@
 </head>
 <body>
     <div class="age-gate-container" data-age-gate>
-        <h1>ADULT CONTENT NOTICE</h1>
-        <p class="age-warning">
+        <h1 data-age-heading>ADULT CONTENT NOTICE</h1>
+        <p class="age-warning" data-age-warning>
             成人向けコンテンツが含まれる場合があります。<br>
             成人向け表現が苦手な方や、18歳未満の方はご退出ください。
         </p>
@@ -122,9 +122,34 @@
             const AGE_KEY = 'mp_isAdult';
             const params = new URLSearchParams(window.location.search);
             const lang = params.get('lang') === 'en' ? 'en' : 'ja';
+            const heading = document.querySelector('[data-age-heading]');
+            const warning = document.querySelector('[data-age-warning]');
             const confirmBtn = document.getElementById('age-confirm');
             const denyBtn = document.getElementById('age-deny');
             const feedback = document.getElementById('age-feedback');
+            const copies = {
+                ja: {
+                    heading: '年齢確認',
+                    warning: '成人向けコンテンツが含まれる場合があります。<br>成人向け表現が苦手な方や、18歳未満の方はご退出ください。',
+                    confirmButton: '18歳以上で、成人向けコンテンツの閲覧に同意します',
+                    denyButton: '18歳未満のため閲覧しません',
+                    successMsg: '年齢確認が完了しました。ページへ移動します...',
+                    denyMsg: '18歳未満の方は閲覧できません。トップページへ戻ってください。'
+                },
+                en: {
+                    heading: 'ADULT CONTENT NOTICE',
+                    warning: 'This site may include adult-oriented content.<br>If you are under 18 or prefer not to view such material, please exit.',
+                    confirmButton: 'I am 18+ and wish to continue viewing adult content',
+                    denyButton: 'I am under 18 / I prefer to leave',
+                    successMsg: 'Age confirmation complete. Redirecting you now...',
+                    denyMsg: 'Content is unavailable to minors. Returning to the top page.'
+                }
+            };
+            const localeCopy = copies[lang] || copies.ja;
+            if (heading) heading.textContent = localeCopy.heading;
+            if (warning) warning.innerHTML = localeCopy.warning;
+            confirmBtn.textContent = localeCopy.confirmButton;
+            denyBtn.textContent = localeCopy.denyButton;
 
             function goToLocale() {
                 const target = lang === 'en' ? 'index_en.html' : 'index_ja.html';
@@ -136,14 +161,14 @@
                 denyBtn.disabled = true;
                 localStorage.setItem(AGE_KEY, 'true');
                 feedback.style.color = '#9ef9b5';
-                feedback.textContent = '年齢確認が完了しました。ページへ移動します...';
+                feedback.textContent = localeCopy.successMsg;
                 setTimeout(goToLocale, 600);
             });
 
             denyBtn.addEventListener('click', () => {
                 localStorage.removeItem(AGE_KEY);
                 feedback.style.color = '#ff8080';
-                feedback.textContent = '18歳未満の方は閲覧できません。トップページへ戻ってください。';
+                feedback.textContent = localeCopy.denyMsg;
                 setTimeout(() => {
                     window.location.href = 'index.html';
                 }, 1200);
