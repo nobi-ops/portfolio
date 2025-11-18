@@ -12,8 +12,8 @@
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background: #0f0f0f;
-            color: #f5f5f5;
+            background: #f8f8f8;
+            color: #2c2c2c;
             min-height: 100svh;
             display: flex;
             align-items: center;
@@ -21,70 +21,84 @@
             padding: 2rem;
         }
         .age-gate-container {
-            max-width: 620px;
+            max-width: 720px;
             width: 100%;
-            background: rgba(23, 23, 23, 0.9);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 18px;
-            padding: 2.5rem;
-            box-shadow: 0 30px 70px rgba(0,0,0,0.7);
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
             text-align: center;
+            border: 1px solid rgba(0,0,0,0.04);
         }
         .age-gate-container h1 {
             font-family: 'Bebas Neue', sans-serif;
             letter-spacing: 2px;
             font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
+            margin-bottom: 1.5rem;
+            color: #2c2c2c;
         }
         .age-gate-container p {
             line-height: 1.8;
-            margin-bottom: 2rem;
-            color: rgba(255,255,255,0.85);
+            margin-bottom: 1.5rem;
+            color: #4b4b4b;
             font-size: 1.05rem;
+        }
+        .age-warning {
+            font-weight: 700;
+            color: #a36c42;
+            margin-bottom: 2rem;
         }
         .age-gate-actions {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
         .age-gate-button {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 999px;
-            font-size: 1.1rem;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
-            transition: transform 0.2s ease, opacity 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            min-width: 220px;
         }
         .age-gate-button.confirm {
-            background: linear-gradient(120deg, #ff4b2b, #ff416c);
+            background: #c5a47e;
             color: #fff;
+            border: 1px solid #c5a47e;
+            box-shadow: 0 8px 20px rgba(197,164,126,0.35);
         }
         .age-gate-button.deny {
-            background: rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.9);
+            background: #fff;
+            color: #c5a47e;
+            border: 1px solid #c5a47e;
         }
         .age-gate-button:disabled {
             opacity: 0.6;
             cursor: not-allowed;
+            box-shadow: none;
+        }
+        .age-feedback {
+            margin-top: 0.5rem;
+            font-weight: 700;
         }
         .age-gate-note {
             margin-top: 1.5rem;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-        }
-        .age-feedback {
-            margin-top: 1rem;
-            color: #ff8080;
-            font-weight: 700;
+            font-size: 0.95rem;
+            color: #7a7a7a;
         }
         @media (max-width: 600px) {
             .age-gate-container {
-                padding: 2rem 1.25rem;
+                padding: 2.5rem 1.5rem;
             }
             .age-gate-container h1 {
                 font-size: 2.4rem;
+            }
+            .age-gate-button {
+                min-width: unset;
+                width: 100%;
             }
         }
     </style>
@@ -92,10 +106,13 @@
 <body>
     <div class="age-gate-container" data-age-gate>
         <h1>ADULT CONTENT NOTICE</h1>
+        <p class="age-warning">
+            成人向けコンテンツが含まれる場合があります。<br>
+            成人向け表現が苦手な方や、18歳未満の方はご退出ください。
+        </p>
         <p>
-            この先には、鍛え抜かれた肉体の艶やかな描写など<br>
-            成人向けの表現が含まれるコンテンツが登場します。<br>
-            18歳以上であることを確認のうえ、先へお進みください。
+            18歳以上であることを確認のうえ、<br>
+            ご自身の責任で閲覧をお進めください。
         </p>
         <div class="age-gate-actions">
             <button class="age-gate-button confirm" id="age-confirm">18歳以上で、成人向けコンテンツの閲覧に同意します</button>
@@ -103,7 +120,7 @@
         </div>
         <div class="age-feedback" id="age-feedback" aria-live="polite"></div>
         <p class="age-gate-note">
-            ご確認ありがとうございます。成人向け表現が苦手な方や、18歳未満の方はご退出ください。
+            ご確認ありがとうございます。安全な環境づくりにご協力ください。
         </p>
     </div>
 
