@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const AGE_STORAGE_KEY = 'mp_isAdult';
+    let currentView = window.location.pathname.split('/').pop();
+    if (!currentView) {
+        currentView = 'index.html';
+    }
+    const localeMap = {
+        'index_ja.html': 'ja',
+        'index_en.html': 'en'
+    };
+    const isAgeGatePage = currentView === 'age-verification.html';
+    const isLanguageSelectionPage = currentView === 'index.html';
+
+    const redirectToAgeGate = (langCode) => {
+        window.location.href = `age-verification.html?lang=${langCode}`;
+    };
+
+    if (isLanguageSelectionPage) {
+        const languageLinks = document.querySelectorAll('a[href="index_ja.html"], a[href="index_en.html"]');
+        languageLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const langCode = link.getAttribute('href').includes('_en') ? 'en' : 'ja';
+                redirectToAgeGate(langCode);
+            });
+        });
+    }
+
+    if (!isAgeGatePage) {
+        const langForPage = localeMap[currentView];
+        if (langForPage && localStorage.getItem(AGE_STORAGE_KEY) !== 'true') {
+            redirectToAgeGate(langForPage);
+            return;
+        }
+    }
 
     // ===== Navbar Scroll & Style Effect =====
     const navbar = document.querySelector('.navbar');
