@@ -312,6 +312,14 @@ section.is-visible {
     padding-top: 0;
     margin-top: 140px;
   }
+  /* Disable fixed background on mobile Safari to prevent paint bleed */
+  .hero { background-attachment: scroll !important; }
+  .hero-promo-photobook img,
+  .hero-promo-newsletter img {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
   .hero-promo-photobook,
   .hero-promo-newsletter {
     max-width: 100%;
