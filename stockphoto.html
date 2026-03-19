@@ -853,7 +853,7 @@
 
 <!-- ===== FILTER BAR ===== -->
 <div class="filter-bar">
-  <span class="result-count">30点表示中</span>
+  <span class="result-count">24点表示中</span>
   <select class="sort-select">
     <option>新着順</option>
     <option>人気順</option>
@@ -864,9 +864,6 @@
 <section class="grid-section">
   <div class="photo-grid" id="photoGrid">
     <!-- Cards injected by JS -->
-  </div>
-  <div class="load-more-wrap">
-    <button class="btn-load-more">もっと見る</button>
   </div>
 </section>
 
@@ -989,9 +986,10 @@
 
 <script>
 // ===== PHOTO DATA =====
-const photos = Array.from({length: 30}, (_, i) => {
+const photos = Array.from({length: 24}, (_, i) => {
   const n = String(i + 1).padStart(3, '0');
-  return { id: `MP-${n}`, file: `stock-images/mp${n}.jpeg`, title: n };
+  const ext = (i + 1) <= 12 ? 'jpg' : 'jpeg';
+  return { id: `MP-${n}`, file: `stock-images/mp${n}.${ext}`, title: n };
 });
 
 let selectedPhoto = null;
