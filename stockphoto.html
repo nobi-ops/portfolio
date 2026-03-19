@@ -990,9 +990,9 @@
     <div class="error-state" id="errorState">
       <div class="error-icon">✕</div>
       <h3>決済処理中にエラーが発生しました</h3>
-      <p>お手数ですが、しばらく時間をおいてから<br>再度お試しください。<br>問題が解決しない場合は下記よりお問い合わせください。</p>
+      <p>お手数ですが、しばらく時間をおいてから<br>再度お試しください。</p>
       <div class="error-code">ERROR: PAYMENT_GATEWAY_TIMEOUT</div>
-      <button class="btn-contact" onclick="closeModal()">お問い合わせはこちら</button>
+      <button class="btn-contact" onclick="closeModal()">閉じる</button>
     </div>
   </div>
 </div>
@@ -1055,36 +1055,36 @@
 <script>
 // ===== PHOTO DATA =====
 const photos = [
-  { id:'PS-0001', file:'images/mmj01.jpeg', title:'競技者の黄金ポーズ', cat:'competition', tags:['コンテスト','ポーズ','フロント'] },
-  { id:'PS-0002', file:'images/mmj02.jpeg', title:'鍛え抜かれた背中美', cat:'training',    tags:['背中','筋肉','後ろ姿'] },
-  { id:'PS-0003', file:'images/mmj03.jpeg', title:'舞台を支配する肉体', cat:'competition', tags:['ステージ','照明','競技'] },
-  { id:'PS-0004', file:'images/mmj04.jpeg', title:'鋼の意志と体躯',    cat:'portrait',    tags:['ポートレート','表情','力強さ'] },
-  { id:'PS-0005', file:'images/mmj05.jpeg', title:'完璧なシルエット',  cat:'physique',    tags:['シルエット','逆光','アート'] },
-  { id:'PS-0006', file:'images/mmj06.jpeg', title:'頂点への軌跡',      cat:'competition', tags:['コンテスト','ステージ','優勝'] },
-  { id:'PS-0007', file:'images/mmj07.jpeg', title:'筋肉美の極致',      cat:'physique',    tags:['フィジーク','バランス','美'] },
-  { id:'PS-0008', file:'images/mmj08.jpeg', title:'力の美学 Vol.1',    cat:'training',    tags:['トレーニング','力こぶ','アーム'] },
-  { id:'PS-0009', file:'images/mmj09.jpeg', title:'アジアの覇者',      cat:'competition', tags:['チャンピオン','ポーズ','アジア'] },
-  { id:'PS-0010', file:'images/mmj10.jpeg', title:'勝利のポーズ',      cat:'competition', tags:['優勝','ガッツポーズ','喜び'] },
-  { id:'PS-0011', file:'images/mmj12.jpeg', title:'孤高の肉体美',      cat:'portrait',    tags:['モノクロ','ポートレート','強さ'] },
-  { id:'PS-0012', file:'images/mmj13.jpeg', title:'フレームの詩',      cat:'physique',    tags:['フィジーク','フレーム','構図'] },
-  { id:'PS-0013', file:'images/mmj15.jpeg', title:'汗と情熱の瞬間',    cat:'training',    tags:['トレーニング','汗','情熱'] },
-  { id:'PS-0014', file:'images/mmj16.jpeg', title:'筋肉美の系譜',      cat:'physique',    tags:['フィジーク','上半身','美しさ'] },
-  { id:'PS-0015', file:'images/mmj17.jpeg', title:'競技者の眼差し',    cat:'portrait',    tags:['ポートレート','目線','集中'] },
-  { id:'PS-0016', file:'images/mmj18.jpeg', title:'力強き腕の造形',    cat:'training',    tags:['上腕二頭筋','アーム','フレックス'] },
-  { id:'PS-0017', file:'images/mmj19.jpeg', title:'黄金の肉体比',      cat:'physique',    tags:['黄金比','バランス','フィジーク'] },
-  { id:'PS-0018', file:'images/mmj20.jpeg', title:'舞台裏の集中',      cat:'competition', tags:['バックステージ','準備','集中力'] },
-  { id:'PS-0019', file:'images/mmj21.jpeg', title:'美と力の融合',      cat:'portrait',    tags:['美しさ','力強さ','ポートレート'] },
-  { id:'PS-0020', file:'images/mmj22.jpeg', title:'究極の背筋美',      cat:'training',    tags:['背中','広背筋','後ろ姿'] },
-  { id:'PS-0021', file:'images/mmj23.jpeg', title:'アジアの誇り',      cat:'competition', tags:['アジア','チャンピオン','誇り'] },
-  { id:'PS-0022', file:'images/mmj25.jpeg', title:'筋肉彫刻 Vol.1',   cat:'physique',    tags:['彫刻美','筋肉','芸術'] },
-  { id:'PS-0023', file:'images/mmj26.jpeg', title:'威風堂々と立つ',    cat:'competition', tags:['存在感','ステージ','威厳'] },
-  { id:'PS-0024', file:'images/mmj27.jpeg', title:'鍛錬の結晶',        cat:'training',    tags:['努力','鍛錬','結果'] },
-  { id:'PS-0025', file:'images/mmj28.jpeg', title:'圧倒的な脚部美',    cat:'training',    tags:['脚部','下半身','クワッド'] },
-  { id:'PS-0026', file:'images/mmj29.jpeg', title:'圧倒的存在感',      cat:'portrait',    tags:['存在感','オーラ','ポートレート'] },
-  { id:'PS-0027', file:'images/mmj31.jpeg', title:'競技者の美学',      cat:'competition', tags:['美学','競技','ポーズ'] },
-  { id:'PS-0028', file:'images/mmj32.jpeg', title:'筋肉美コレクション',cat:'physique',    tags:['コレクション','筋肉美','フィジーク'] },
-  { id:'PS-0029', file:'images/mmj33.jpeg', title:'頂点を極めた肉体',  cat:'competition', tags:['最強','チャンピオン','頂点'] },
-  { id:'PS-0030', file:'images/mmj34.jpeg', title:'黄金比の体躯',      cat:'physique',    tags:['黄金比','理想体型','フィジーク'] },
+  { id:'MP-001', file:'stock-images/mp001.jpg', title:'競技者の黄金ポーズ',   tags:['コンテスト','ポーズ','フロント'] },
+  { id:'MP-002', file:'stock-images/mp002.jpg', title:'鍛え抜かれた背中美',   tags:['背中','筋肉','後ろ姿'] },
+  { id:'MP-003', file:'stock-images/mp003.jpg', title:'舞台を支配する肉体',   tags:['ステージ','照明','競技'] },
+  { id:'MP-004', file:'stock-images/mp004.jpg', title:'鋼の意志と体躯',       tags:['ポートレート','表情','力強さ'] },
+  { id:'MP-005', file:'stock-images/mp005.jpg', title:'完璧なシルエット',     tags:['シルエット','逆光','アート'] },
+  { id:'MP-006', file:'stock-images/mp006.jpg', title:'頂点への軌跡',         tags:['コンテスト','ステージ','優勝'] },
+  { id:'MP-007', file:'stock-images/mp007.jpg', title:'筋肉美の極致',         tags:['フィジーク','バランス','美'] },
+  { id:'MP-008', file:'stock-images/mp008.jpg', title:'力の美学 Vol.1',       tags:['トレーニング','力こぶ','アーム'] },
+  { id:'MP-009', file:'stock-images/mp009.jpg', title:'アジアの覇者',         tags:['チャンピオン','ポーズ','アジア'] },
+  { id:'MP-010', file:'stock-images/mp010.jpg', title:'勝利のポーズ',         tags:['優勝','ガッツポーズ','喜び'] },
+  { id:'MP-011', file:'stock-images/mp011.jpg', title:'孤高の肉体美',         tags:['モノクロ','ポートレート','強さ'] },
+  { id:'MP-012', file:'stock-images/mp012.jpg', title:'フレームの詩',         tags:['フィジーク','フレーム','構図'] },
+  { id:'MP-013', file:'stock-images/mp013.jpg', title:'汗と情熱の瞬間',       tags:['トレーニング','汗','情熱'] },
+  { id:'MP-014', file:'stock-images/mp014.jpg', title:'筋肉美の系譜',         tags:['フィジーク','上半身','美しさ'] },
+  { id:'MP-015', file:'stock-images/mp015.jpg', title:'競技者の眼差し',       tags:['ポートレート','目線','集中'] },
+  { id:'MP-016', file:'stock-images/mp016.jpg', title:'力強き腕の造形',       tags:['上腕二頭筋','アーム','フレックス'] },
+  { id:'MP-017', file:'stock-images/mp017.jpg', title:'黄金の肉体比',         tags:['黄金比','バランス','フィジーク'] },
+  { id:'MP-018', file:'stock-images/mp018.jpg', title:'舞台裏の集中',         tags:['バックステージ','準備','集中力'] },
+  { id:'MP-019', file:'stock-images/mp019.jpg', title:'美と力の融合',         tags:['美しさ','力強さ','ポートレート'] },
+  { id:'MP-020', file:'stock-images/mp020.jpg', title:'究極の背筋美',         tags:['背中','広背筋','後ろ姿'] },
+  { id:'MP-021', file:'stock-images/mp021.jpg', title:'アジアの誇り',         tags:['アジア','チャンピオン','誇り'] },
+  { id:'MP-022', file:'stock-images/mp022.jpg', title:'筋肉彫刻 Vol.1',      tags:['彫刻美','筋肉','芸術'] },
+  { id:'MP-023', file:'stock-images/mp023.jpg', title:'威風堂々と立つ',       tags:['存在感','ステージ','威厳'] },
+  { id:'MP-024', file:'stock-images/mp024.jpg', title:'鍛錬の結晶',           tags:['努力','鍛錬','結果'] },
+  { id:'MP-025', file:'stock-images/mp025.jpg', title:'圧倒的な脚部美',       tags:['脚部','下半身','クワッド'] },
+  { id:'MP-026', file:'stock-images/mp026.jpg', title:'圧倒的存在感',         tags:['存在感','オーラ','ポートレート'] },
+  { id:'MP-027', file:'stock-images/mp027.jpg', title:'競技者の美学',         tags:['美学','競技','ポーズ'] },
+  { id:'MP-028', file:'stock-images/mp028.jpg', title:'筋肉美コレクション',   tags:['コレクション','筋肉美','フィジーク'] },
+  { id:'MP-029', file:'stock-images/mp029.jpg', title:'頂点を極めた肉体',     tags:['最強','チャンピオン','頂点'] },
+  { id:'MP-030', file:'stock-images/mp030.jpg', title:'黄金比の体躯',         tags:['黄金比','理想体型','フィジーク'] },
 ];
 
 let selectedPhoto = null;
