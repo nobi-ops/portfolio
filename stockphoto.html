@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUSCLE PHOTO | プロ仕様フィットネス写真素材</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --navy: #111827;
+      --gray-900: #1f2937;
+      --gray-700: #374151;
+      --gray-500: #6b7280;
+      --gray-300: #d1d5db;
+      --gray-100: #f3f4f6;
+      --white: #ffffff;
+      --gold: #d4a843;
+      --gold-light: #f0c060;
+      --stripe-purple: #635bff;
+      --stripe-purple-dark: #5147d9;
+      --green: #22c55e;
+      --red: #ef4444;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--gray-100);
+      color: var(--gray-900);
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--black);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 3px;
+      color: var(--white);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .logo span { color: var(--gold); }
+
+    .search-bar {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+    .search-bar:focus-within { border-color: var(--gold); }
+    .search-bar input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: .6rem 1rem;
+      font-size: .9rem;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+    }
+    .search-bar input::placeholder { color: var(--gray-500); }
+    .search-bar button {
+      background: var(--gold);
+      border: none;
+      padding: 0 1.2rem;
+      cursor: pointer;
+      color: var(--black);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      transition: background .2s;
+    }
+    .search-bar button:hover { background: var(--gold-light); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+    }
+
+    .btn-login {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      padding: .45rem 1.1rem;
+      border-radius: 6px;
+      font-size: .85rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .btn-login:hover { border-color: var(--white); }
+
+    .btn-register {
+      background: var(--gold);
+      border: none;
+      color: var(--black);
+      padding: .45rem 1.1rem;
+      border-radius: 6px;
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .btn-register:hover { background: var(--gold-light); }
+
+    .cart-btn {
+      position: relative;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.3rem;
+      cursor: pointer;
+      padding: .3rem;
+      line-height: 1;
+    }
+    .cart-badge {
+      position: absolute;
+      top: -4px;
+      right: -6px;
+      background: var(--gold);
+      color: var(--black);
+      font-size: .6rem;
+      font-weight: 700;
+      min-width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--black) 0%, #1a1a2e 40%, #16213e 70%, #0f3460 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center top, rgba(212,168,67,.12) 0%, transparent 60%);
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(212,168,67,.15);
+      border: 1px solid rgba(212,168,67,.4);
+      color: var(--gold);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: .3rem .9rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      letter-spacing: 4px;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      color: rgba(255,255,255,.6);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+    .hero-stat span {
+      font-size: .8rem;
+      color: rgba(255,255,255,.5);
+      letter-spacing: 1px;
+    }
+
+    /* ===== FILTER BAR ===== */
+    .filter-bar {
+      background: var(--white);
+      padding: .75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      border-bottom: 1px solid var(--gray-300);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .result-count {
+      font-size: .85rem;
+      color: var(--gray-500);
+      white-space: nowrap;
+    }
+    .sort-select {
+      border: 1px solid var(--gray-300);
+      border-radius: 6px;
+      padding: .4rem .8rem;
+      font-size: .85rem;
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--gray-700);
+      cursor: pointer;
+    }
+
+    /* ===== PHOTO GRID ===== */
+    .grid-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 1200px) { .photo-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 900px) { .photo-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 600px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .photo-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      transition: transform .25s, box-shadow .25s;
+      cursor: pointer;
+      position: relative;
+    }
+    .photo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.15);
+    }
+
+    .photo-wrap {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: #e5e7eb;
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+      display: block;
+    }
+    .photo-card:hover .photo-wrap img { transform: scale(1.05); }
+
+    /* Placeholder for missing images */
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+      color: var(--gray-500);
+      gap: .5rem;
+    }
+    .photo-placeholder .ph-icon { font-size: 2.5rem; opacity: .4; }
+    .photo-placeholder .ph-label { font-size: .7rem; letter-spacing: 1px; text-transform: uppercase; opacity: .5; }
+
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.3) 50%, transparent 100%);
+      opacity: 0;
+      transition: opacity .25s;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+    }
+    .photo-card:hover .photo-overlay { opacity: 1; }
+
+    .overlay-title {
+      color: var(--white);
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: .35rem;
+    }
+    .overlay-tags {
+      display: flex;
+      gap: .35rem;
+      flex-wrap: wrap;
+      margin-bottom: .75rem;
+    }
+    .overlay-tag {
+      background: rgba(255,255,255,.15);
+      color: rgba(255,255,255,.8);
+      font-size: .65rem;
+      padding: .15rem .5rem;
+      border-radius: 10px;
+      letter-spacing: .5px;
+    }
+    .overlay-actions {
+      display: flex;
+      gap: .5rem;
+    }
+    .btn-buy {
+      flex: 1;
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      border-radius: 6px;
+      padding: .55rem;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background .2s;
+    }
+    .btn-buy:hover { background: var(--gold-light); }
+    .btn-preview {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.3);
+      color: var(--white);
+      border-radius: 6px;
+      padding: .55rem .7rem;
+      font-size: .85rem;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-preview:hover { background: rgba(255,255,255,.25); }
+
+    .photo-info {
+      padding: .75rem 1rem;
+    }
+    .photo-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: .3rem;
+    }
+    .photo-id {
+      font-size: .7rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+    .photo-cat-badge {
+      font-size: .65rem;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      padding: .15rem .5rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .photo-title {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: .5rem;
+      line-height: 1.3;
+    }
+    .photo-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .photo-price {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+    .photo-price small {
+      font-size: .65rem;
+      font-weight: 400;
+      color: var(--gray-500);
+      margin-left: .2rem;
+    }
+    .btn-cart-small {
+      background: none;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 6px;
+      padding: .3rem .6rem;
+      font-size: .75rem;
+      cursor: pointer;
+      color: var(--gray-700);
+      font-family: 'Inter', sans-serif;
+      transition: all .2s;
+    }
+    .btn-cart-small:hover {
+      background: var(--gray-900);
+      border-color: var(--gray-900);
+      color: var(--white);
+    }
+
+    /* ===== STRIPE MODAL ===== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--white);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 560px;
+      box-shadow: 0 25px 80px rgba(0,0,0,.35);
+      overflow: hidden;
+      transform: translateY(20px);
+      transition: transform .25s;
+    }
+    .modal-overlay.open .modal { transform: translateY(0); }
+
+    .modal-header {
+      background: var(--black);
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .modal-brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .modal-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+    .modal-logo span { color: var(--gold); }
+    .modal-close {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,.5);
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: .2rem;
+      transition: color .2s;
+    }
+    .modal-close:hover { color: var(--white); }
+
+    .modal-summary {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 1.75rem;
+      background: var(--gray-100);
+      border-bottom: 1px solid var(--gray-300);
+    }
+    .summary-img {
+      width: 64px;
+      height: 86px;
+      object-fit: cover;
+      border-radius: 6px;
+      background: var(--gray-300);
+      flex-shrink: 0;
+    }
+    .summary-img.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      opacity: .4;
+    }
+    .summary-details { flex: 1; }
+    .summary-title {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: .25rem;
+    }
+    .summary-license {
+      font-size: .75rem;
+      color: var(--gray-500);
+      margin-bottom: .5rem;
+    }
+    .license-select {
+      border: 1px solid var(--gray-300);
+      border-radius: 6px;
+      padding: .3rem .6rem;
+      font-size: .78rem;
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--gray-700);
+    }
+    .summary-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      white-space: nowrap;
+    }
+    .summary-price small {
+      display: block;
+      font-size: .65rem;
+      color: var(--gray-500);
+      font-weight: 400;
+    }
+
+    .modal-body { padding: 1.75rem; }
+
+    .stripe-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+    .stripe-title {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .stripe-logo {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .72rem;
+      color: var(--gray-500);
+    }
+    .stripe-logo-badge {
+      background: #635bff;
+      color: white;
+      font-size: .6rem;
+      font-weight: 700;
+      padding: .15rem .4rem;
+      border-radius: 3px;
+      letter-spacing: .5px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--gray-700);
+      margin-bottom: .4rem;
+    }
+    .form-input {
+      width: 100%;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 8px;
+      padding: .7rem .9rem;
+      font-size: .9rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      background: var(--white);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .form-input:focus {
+      border-color: var(--stripe-purple);
+      box-shadow: 0 0 0 3px rgba(99,91,255,.15);
+    }
+    .form-input::placeholder { color: var(--gray-500); font-size: .875rem; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+    }
+
+    .card-input-wrap {
+      position: relative;
+    }
+    .card-brands {
+      position: absolute;
+      right: .75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      gap: .25rem;
+    }
+    .card-brand {
+      width: 28px;
+      height: 18px;
+      border: 1px solid var(--gray-300);
+      border-radius: 3px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .55rem;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+    .card-brand.visa { color: #1434CB; }
+    .card-brand.mc { color: #EB001B; }
+
+    .secure-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      font-size: .73rem;
+      color: var(--gray-500);
+      margin: .75rem 0 1.25rem;
+    }
+    .secure-note svg { width: 12px; height: 12px; }
+
+    .btn-pay {
+      width: 100%;
+      background: var(--stripe-purple);
+      border: none;
+      color: var(--white);
+      border-radius: 8px;
+      padding: .95rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: .3px;
+      transition: background .2s, transform .1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+    }
+    .btn-pay:hover { background: var(--stripe-purple-dark); }
+    .btn-pay:active { transform: scale(.98); }
+    .btn-pay .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      display: none;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== ERROR STATE ===== */
+    .error-state {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2.5rem 1.75rem;
+    }
+    .error-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 1.25rem;
+      animation: popIn .4s cubic-bezier(.17,.67,.44,1.34);
+    }
+    @keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
+    .error-state h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: .6rem;
+      color: var(--gray-900);
+    }
+    .error-state p {
+      font-size: .88rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: .5rem;
+    }
+    .error-code {
+      font-size: .75rem;
+      color: var(--gray-500);
+      background: var(--gray-100);
+      border: 1px solid var(--gray-300);
+      border-radius: 4px;
+      padding: .3rem .7rem;
+      margin-bottom: 1.75rem;
+      font-family: monospace;
+      letter-spacing: .5px;
+    }
+    .btn-contact {
+      background: var(--gray-900);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      padding: .8rem 2rem;
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background .2s;
+    }
+    .btn-contact:hover { background: var(--gray-700); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--black);
+      color: rgba(255,255,255,.5);
+      padding: 3rem 2rem;
+      margin-top: 2rem;
+    }
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+    @media (max-width: 800px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    .footer-brand .logo { display: block; margin-bottom: .75rem; }
+    .footer-brand p { font-size: .82rem; line-height: 1.7; }
+    .footer-col h4 {
+      color: var(--white);
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: .5px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: .5rem; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,.45);
+      text-decoration: none;
+      font-size: .82rem;
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .78rem;
+    }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a {
+      color: rgba(255,255,255,.4);
+      text-decoration: none;
+    }
+    .footer-bottom-links a:hover { color: var(--white); }
+    .payment-icons { display: flex; gap: .5rem; align-items: center; }
+    .pay-icon {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 4px;
+      padding: .2rem .5rem;
+      font-size: .65rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.6);
+      letter-spacing: .5px;
+    }
+
+    /* ===== LOAD MORE ===== */
+    .load-more-wrap {
+      text-align: center;
+      padding: 2rem 0 1rem;
+    }
+    .btn-load-more {
+      background: var(--white);
+      border: 1.5px solid var(--gray-300);
+      border-radius: 8px;
+      padding: .8rem 2.5rem;
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-700);
+      transition: all .2s;
+    }
+    .btn-load-more:hover {
+      background: var(--gray-900);
+      border-color: var(--gray-900);
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <a class="logo" href="#">MUSCLE<span>PHOTO</span></a>
+  <div class="search-bar">
+    <input type="text" placeholder="筋肉美、コンテスト、トレーニング...">
+    <button>&#128269;</button>
+  </div>
+  <div class="header-actions">
+    <button class="cart-btn" onclick="alert('カートは空です')">
+      &#128722;
+      <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+    </button>
+    <button class="btn-login">ログイン</button>
+    <button class="btn-register">無料登録</button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Premium Fitness Stock Photos</div>
+    <h1>プロ品質の<br><span>フィットネス</span>写真素材</h1>
+    <p>商業利用可能な高解像度フィットネス写真。<br>1点から購入でき、即日ダウンロード。</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>500+</strong>
+        <span>PHOTOS</span>
+      </div>
+      <div class="hero-stat">
+        <strong>4K</strong>
+        <span>RESOLUTION</span>
+      </div>
+      <div class="hero-stat">
+        <strong>即日</strong>
+        <span>DOWNLOAD</span>
+      </div>
+      <div class="hero-stat">
+        <strong>商業</strong>
+        <span>LICENSE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FILTER BAR ===== -->
+<div class="filter-bar">
+  <span class="result-count">30点表示中</span>
+  <select class="sort-select">
+    <option>新着順</option>
+    <option>人気順</option>
+  </select>
+</div>
+
+<!-- ===== PHOTO GRID ===== -->
+<section class="grid-section">
+  <div class="photo-grid" id="photoGrid">
+    <!-- Cards injected by JS -->
+  </div>
+  <div class="load-more-wrap">
+    <button class="btn-load-more">もっと見る</button>
+  </div>
+</section>
+
+<!-- ===== STRIPE PAYMENT MODAL ===== -->
+<div class="modal-overlay" id="payModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-brand">
+        <span class="modal-logo">MUSCLE<span>PHOTO</span></span>
+      </div>
+      <button class="modal-close" onclick="closeModal()">&#215;</button>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="modal-summary" id="modalSummary">
+      <div class="summary-img placeholder" id="summaryImg">📷</div>
+      <div class="summary-details">
+        <div class="summary-title" id="summaryTitle">写真タイトル</div>
+        <div class="summary-license">ライセンスタイプ:</div>
+        <select class="license-select">
+          <option>スタンダードライセンス（商業利用可）</option>
+          <option>エクステンデッドライセンス</option>
+        </select>
+      </div>
+      <div>
+        <div class="summary-price">¥10,000<small>税込</small></div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="modal-body" id="payForm">
+      <div class="stripe-header">
+        <span class="stripe-title">お支払い情報</span>
+        <div class="stripe-logo">
+          Powered by <span class="stripe-logo-badge">stripe</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">メールアドレス</label>
+        <input class="form-input" type="email" placeholder="your@email.com">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">カード番号</label>
+        <div class="card-input-wrap">
+          <input class="form-input" type="text" placeholder="1234  5678  9012  3456" maxlength="19" style="padding-right:5.5rem;" oninput="formatCard(this)">
+          <div class="card-brands">
+            <div class="card-brand visa">VISA</div>
+            <div class="card-brand mc">MC</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:0">
+          <label class="form-label">有効期限</label>
+          <input class="form-input" type="text" placeholder="MM / YY" maxlength="7" oninput="formatExpiry(this)">
+        </div>
+        <div class="form-group" style="margin-bottom:0">
+          <label class="form-label">セキュリティコード</label>
+          <input class="form-input" type="text" placeholder="CVC" maxlength="4">
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top:1rem;">
+        <label class="form-label">カード名義人</label>
+        <input class="form-input" type="text" placeholder="TARO YAMADA">
+      </div>
+
+      <div class="secure-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <rect x="3" y="11" width="18" height="11" rx="2"/>
+          <path d="M7 11V7a5 5 0 0110 0v4"/>
+        </svg>
+        256bit SSL暗号化で保護されています
+      </div>
+
+      <button class="btn-pay" onclick="processPay()">
+        <span class="spinner" id="paySpinner"></span>
+        <span id="payLabel">¥10,000 を今すぐ購入</span>
+      </button>
+    </div>
+
+    <!-- Error State -->
+    <div class="error-state" id="errorState">
+      <div class="error-icon">✕</div>
+      <h3>決済処理中にエラーが発生しました</h3>
+      <p>お手数ですが、しばらく時間をおいてから<br>再度お試しください。<br>問題が解決しない場合は下記よりお問い合わせください。</p>
+      <div class="error-code">ERROR: PAYMENT_GATEWAY_TIMEOUT</div>
+      <button class="btn-contact" onclick="closeModal()">お問い合わせはこちら</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="logo" href="#">MUSCLE<span>PHOTO</span></a>
+      <p>アジア最大級のフィットネス・ボディビルダー専門ストックフォトサービス。プロフォトグラファーが撮影した高品質な写真素材を1点から購入できます。</p>
+    </div>
+    <div class="footer-col">
+      <h4>写真素材</h4>
+      <ul>
+        <li><a href="#">コンテスト写真</a></li>
+        <li><a href="#">トレーニング写真</a></li>
+        <li><a href="#">フィジーク</a></li>
+        <li><a href="#">ポートレート</a></li>
+        <li><a href="#">新着素材</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>ライセンス</h4>
+      <ul>
+        <li><a href="#">スタンダード</a></li>
+        <li><a href="#">エクステンデッド</a></li>
+        <li><a href="#">商業利用について</a></li>
+        <li><a href="#">利用規約</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>会社情報</h4>
+      <ul>
+        <li><a href="#">運営会社</a></li>
+        <li><a href="#">カメラマン登録</a></li>
+        <li><a href="#">プレスリリース</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 MUSCLE PHOTO. All rights reserved.</span>
+    <div class="payment-icons">
+      <div class="pay-icon">VISA</div>
+      <div class="pay-icon">MC</div>
+      <div class="pay-icon">AMEX</div>
+      <div class="pay-icon">JCB</div>
+      <div class="pay-icon stripe-logo-badge" style="font-size:.65rem;">stripe</div>
+    </div>
+    <div class="footer-bottom-links">
+      <a href="#">特定商取引法</a>
+      <a href="#">プライバシー</a>
+      <a href="#">利用規約</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== PHOTO DATA =====
+const photos = [
+  { id:'PS-0001', file:'images/mmj01.jpeg', title:'競技者の黄金ポーズ', cat:'competition', tags:['コンテスト','ポーズ','フロント'] },
+  { id:'PS-0002', file:'images/mmj02.jpeg', title:'鍛え抜かれた背中美', cat:'training',    tags:['背中','筋肉','後ろ姿'] },
+  { id:'PS-0003', file:'images/mmj03.jpeg', title:'舞台を支配する肉体', cat:'competition', tags:['ステージ','照明','競技'] },
+  { id:'PS-0004', file:'images/mmj04.jpeg', title:'鋼の意志と体躯',    cat:'portrait',    tags:['ポートレート','表情','力強さ'] },
+  { id:'PS-0005', file:'images/mmj05.jpeg', title:'完璧なシルエット',  cat:'physique',    tags:['シルエット','逆光','アート'] },
+  { id:'PS-0006', file:'images/mmj06.jpeg', title:'頂点への軌跡',      cat:'competition', tags:['コンテスト','ステージ','優勝'] },
+  { id:'PS-0007', file:'images/mmj07.jpeg', title:'筋肉美の極致',      cat:'physique',    tags:['フィジーク','バランス','美'] },
+  { id:'PS-0008', file:'images/mmj08.jpeg', title:'力の美学 Vol.1',    cat:'training',    tags:['トレーニング','力こぶ','アーム'] },
+  { id:'PS-0009', file:'images/mmj09.jpeg', title:'アジアの覇者',      cat:'competition', tags:['チャンピオン','ポーズ','アジア'] },
+  { id:'PS-0010', file:'images/mmj10.jpeg', title:'勝利のポーズ',      cat:'competition', tags:['優勝','ガッツポーズ','喜び'] },
+  { id:'PS-0011', file:'images/mmj12.jpeg', title:'孤高の肉体美',      cat:'portrait',    tags:['モノクロ','ポートレート','強さ'] },
+  { id:'PS-0012', file:'images/mmj13.jpeg', title:'フレームの詩',      cat:'physique',    tags:['フィジーク','フレーム','構図'] },
+  { id:'PS-0013', file:'images/mmj15.jpeg', title:'汗と情熱の瞬間',    cat:'training',    tags:['トレーニング','汗','情熱'] },
+  { id:'PS-0014', file:'images/mmj16.jpeg', title:'筋肉美の系譜',      cat:'physique',    tags:['フィジーク','上半身','美しさ'] },
+  { id:'PS-0015', file:'images/mmj17.jpeg', title:'競技者の眼差し',    cat:'portrait',    tags:['ポートレート','目線','集中'] },
+  { id:'PS-0016', file:'images/mmj18.jpeg', title:'力強き腕の造形',    cat:'training',    tags:['上腕二頭筋','アーム','フレックス'] },
+  { id:'PS-0017', file:'images/mmj19.jpeg', title:'黄金の肉体比',      cat:'physique',    tags:['黄金比','バランス','フィジーク'] },
+  { id:'PS-0018', file:'images/mmj20.jpeg', title:'舞台裏の集中',      cat:'competition', tags:['バックステージ','準備','集中力'] },
+  { id:'PS-0019', file:'images/mmj21.jpeg', title:'美と力の融合',      cat:'portrait',    tags:['美しさ','力強さ','ポートレート'] },
+  { id:'PS-0020', file:'images/mmj22.jpeg', title:'究極の背筋美',      cat:'training',    tags:['背中','広背筋','後ろ姿'] },
+  { id:'PS-0021', file:'images/mmj23.jpeg', title:'アジアの誇り',      cat:'competition', tags:['アジア','チャンピオン','誇り'] },
+  { id:'PS-0022', file:'images/mmj25.jpeg', title:'筋肉彫刻 Vol.1',   cat:'physique',    tags:['彫刻美','筋肉','芸術'] },
+  { id:'PS-0023', file:'images/mmj26.jpeg', title:'威風堂々と立つ',    cat:'competition', tags:['存在感','ステージ','威厳'] },
+  { id:'PS-0024', file:'images/mmj27.jpeg', title:'鍛錬の結晶',        cat:'training',    tags:['努力','鍛錬','結果'] },
+  { id:'PS-0025', file:'images/mmj28.jpeg', title:'圧倒的な脚部美',    cat:'training',    tags:['脚部','下半身','クワッド'] },
+  { id:'PS-0026', file:'images/mmj29.jpeg', title:'圧倒的存在感',      cat:'portrait',    tags:['存在感','オーラ','ポートレート'] },
+  { id:'PS-0027', file:'images/mmj31.jpeg', title:'競技者の美学',      cat:'competition', tags:['美学','競技','ポーズ'] },
+  { id:'PS-0028', file:'images/mmj32.jpeg', title:'筋肉美コレクション',cat:'physique',    tags:['コレクション','筋肉美','フィジーク'] },
+  { id:'PS-0029', file:'images/mmj33.jpeg', title:'頂点を極めた肉体',  cat:'competition', tags:['最強','チャンピオン','頂点'] },
+  { id:'PS-0030', file:'images/mmj34.jpeg', title:'黄金比の体躯',      cat:'physique',    tags:['黄金比','理想体型','フィジーク'] },
+];
+
+let selectedPhoto = null;
+
+function buildGrid() {
+  const grid = document.getElementById('photoGrid');
+  grid.innerHTML = photos.map(p => `
+    <div class="photo-card" data-cat="${p.cat}">
+      <div class="photo-wrap">
+        <img src="${p.file}" alt="${p.title}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:none">
+          <span class="ph-icon">📷</span>
+          <span class="ph-label">Photo Coming Soon</span>
+        </div>
+        <div class="photo-overlay">
+          <div class="overlay-title">${p.title}</div>
+          <div class="overlay-tags">${p.tags.map(t=>`<span class="overlay-tag">${t}</span>`).join('')}</div>
+          <div class="overlay-actions">
+            <button class="btn-buy" onclick="openModal(event,'${p.id}')">¥10,000 で購入</button>
+            <button class="btn-preview">🔍</button>
+          </div>
+        </div>
+      </div>
+      <div class="photo-info">
+        <div class="photo-meta">
+          <span class="photo-id">${p.id}</span>
+        </div>
+        <div class="photo-title">${p.title}</div>
+        <div class="photo-price-row">
+          <span class="photo-price">¥10,000<small>税込</small></span>
+          <button class="btn-cart-small" onclick="openModal(event,'${p.id}')">購入する</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  document.querySelector('.result-count').textContent = `${photos.length}点表示中`;
+}
+
+// ===== MODAL =====
+function openModal(e, photoId) {
+  e.stopPropagation();
+  selectedPhoto = photos.find(p => p.id === photoId);
+  if (!selectedPhoto) return;
+
+  document.getElementById('summaryTitle').textContent = selectedPhoto.title;
+
+  // Try to show photo in summary
+  const imgEl = document.getElementById('summaryImg');
+  imgEl.className = 'summary-img';
+  imgEl.innerHTML = '';
+  const img = document.createElement('img');
+  img.src = selectedPhoto.file;
+  img.alt = selectedPhoto.title;
+  img.style.cssText = 'width:64px;height:86px;object-fit:cover;border-radius:6px;';
+  img.onerror = () => { imgEl.className = 'summary-img placeholder'; imgEl.textContent = '📷'; };
+  imgEl.appendChild(img);
+
+  // Reset form state
+  document.getElementById('payForm').style.display = 'block';
+  document.getElementById('errorState').style.display = 'none';
+  const btn = document.querySelector('.btn-pay');
+  btn.disabled = false;
+  document.getElementById('paySpinner').style.display = 'none';
+  document.getElementById('payLabel').textContent = '¥10,000 を今すぐ購入';
+
+  document.getElementById('payModal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('payModal').classList.remove('open');
+}
+
+document.getElementById('payModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+function processPay() {
+  const spinner = document.getElementById('paySpinner');
+  const label   = document.getElementById('payLabel');
+  const btn     = document.querySelector('.btn-pay');
+  spinner.style.display = 'block';
+  label.textContent = '処理中...';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    document.getElementById('payForm').style.display = 'none';
+    const es = document.getElementById('errorState');
+    es.style.display = 'flex';
+  }, 2500);
+}
+
+// ===== CARD FORMAT HELPERS =====
+function formatCard(el) {
+  let v = el.value.replace(/\D/g,'').slice(0,16);
+  el.value = v.replace(/(.{4})/g,'$1  ').trim();
+}
+function formatExpiry(el) {
+  let v = el.value.replace(/\D/g,'').slice(0,4);
+  if (v.length >= 3) v = v.slice(0,2) + ' / ' + v.slice(2);
+  el.value = v;
+}
+
+// ===== INIT =====
+buildGrid();
+</script>
+</body>
+</html>
