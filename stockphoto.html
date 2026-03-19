@@ -981,10 +981,15 @@
 
 <script>
 // ===== PHOTO DATA =====
-const photos = Array.from({length: 24}, (_, i) => {
+const photoFiles = [
+  'mp001.jpg','mp002.jpg','mp003.jpg','mp004.jpg','mp005.jpg','mp006.jpg',
+  'mp007.jpg','mp008.jpg','mp009.jpg','mp010.jpg','mp011.jpg','mp012.jpg',
+  'mp013.jpeg','mp014.jpeg','mp015.jpeg','mp016.jpeg','mp017.jpeg','mp018.jpeg',
+  'mp019.jpg','mp020.jpeg','mp021.jpg','mp022.jpg','mp023.jpg','mp024.jpg'
+];
+const photos = photoFiles.map((file, i) => {
   const n = String(i + 1).padStart(3, '0');
-  const ext = (i + 1) <= 12 ? 'jpg' : 'jpeg';
-  return { id: `MP-${n}`, file: `stock-images/mp${n}.${ext}`, title: n };
+  return { id: `MP-${n}`, file: `stock-images/${file}`, title: n };
 });
 
 let selectedPhoto = null;
